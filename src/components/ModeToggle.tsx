@@ -4,7 +4,7 @@ import { LuMoon } from "react-icons/lu";
 
 export function ModeToggle() {
   const [theme, setThemeState] = useState<"theme-light" | "dark" | "system">(
-    "theme-light"
+    "theme-light",
   );
 
   const toggleTheme = () => {

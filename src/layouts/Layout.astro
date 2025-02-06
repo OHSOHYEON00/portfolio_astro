@@ -2,6 +2,7 @@
 import Navbar from "components/Navbar";
 import "../styles/global.css";
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,9 +12,11 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Sohyeon Oh</title>
   </head>
-  <body class="dark:bg-background dark:text-foreground">
+  <body
+    class="dark:bg-background dark:text-foreground text-slate-700 font-display"
+  >
     <Navbar client:load />
-      <slot />
+    <slot />
   </body>
 </html>
 
