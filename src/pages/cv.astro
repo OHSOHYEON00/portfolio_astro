@@ -44,14 +44,20 @@ import { Expeirences_CV, Education_CV } from "utils";
     </section>
 
     <section class="flex gap-16">
-      <h2 class="text-lg font-medium">EDUCATION</h2>
-      <article>
-        <div>
-          <h3>{Education_CV.title}</h3>
-          <p>{Education_CV.startDate} - {Education_CV.endDate}</p>
+      <h2 class="md:text-lg text-md font-medium">EDUCATION</h2>
+      <article class="w-screen">
+        <div class={` flex items-center justify-between`}>
+          <h3 class="font-semibold text-xl inline">{Education_CV.title}</h3>
+          <p class="text-sm font-normal">
+            {Education_CV.startDate} - {Education_CV.endDate}
+          </p>
         </div>
-        <p>{Education_CV.where}</p>
-        <p>{Education_CV.org}</p>
+        <p class="mt-3 tracking-tight text-gray-500 font-light text-xs">
+          {Education_CV.where}
+        </p>
+        <p class="tracking-tight text-sm text-gray-500 my-3">
+          {Education_CV.org}
+        </p>
       </article>
     </section>
   </main>
