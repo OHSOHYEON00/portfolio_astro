@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DownIcon from 'assets/DownIcon.svg'
+import { Icon } from 'astro-icon/components'
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <main class="p-4 text-slate-700 dark:text-slate-400">
+    <section class="flex flex-col w-full h-screen justify-center items-center">
+      <p
+        class="max-w-56 text-center"
+      >
+        Hello, I'm <strong>Sohyeon Oh</strong>, a frontend engineer from
+        Korea
+      </p>
+	  <img src={DownIcon.src} width="24" height="24" class="text-2xl animate-bounce mt-10" alt="bouncing down arrow"/>
+    </section>
+    <section class="flex flex-col w-full justify-center items-center gap-28">
+      <h2 class="font-bold">Projects</h2>
+    </section>
+    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+      <h2 class="font-bold">Experience</h2>
+    </section>
+    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+      <h2 class="font-bold">Posts</h2>
+    </section>
+    <section class="flex flex-col w-full justify-center items-center gap-28 mt-56">
+      <h2 class="font-bold">About me</h2>
+      <div class="flex flex-col items-center gap-4 max-w-[500px]">
+        <p class="text-center">My name is <strong>Alejandro Londoño</strong>, I started programming in mid-2021 and I currently specialize in web development.</p>
+        <p class="text-center">I am passionate about technology, learning new things, sharing knowledge and creating open source software.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="text-center text-sm text-slate-700 dark:text-slate-400 p-4 mt-28">
+      Made with &#x2665; by Alejandro Londoño | @slydragonn
+    </p>
+  </footer>
+</Layout>
