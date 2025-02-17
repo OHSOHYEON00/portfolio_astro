@@ -1,17 +1,16 @@
 export const Expeirences_CV: Expeirences_CV_T[] = [
   {
-    company: "Freelance",
+    company: "CLIQup",
     startDate: "JUN 2024",
     endDate: "CURRENT",
     where: "Berlin, Germany",
     position: "Frontend Engineer (WEB)",
     companyDescription:
-      "Freelancing as a frontend engineer at CLIQup, based in Berlin.",
+      "CLIQup is a social platform that helps users plan small get-togethers with people nearby, make new friends, and discover different activities and events in the city.",
     bullets: [
-      "Collaborative Problem-Solving: Took ownership of key technical challenges by proactively collaborating with cross- functional teams (CTO, PM, Backend engineers, and Designers) to resolve critical issues.",
-      "Resolved deployment failures by diagnosing critical issues, facilitating discussions with the CTO and PM, and ensuring clear documentation for future stability.",
-      "Resolved a UX issue in the ticket booking flow by redesigning the process with PM and Designers for a more intuitive user experience. Technically, I refactored modal controls to ensure smooth interactions and improve flow efficiency.",
-      "Code Review & Maintainability: Took responsibility for the frontend code reviews focusing on edge cases and maintainability. Ensured high-quality code by catching edge cases early, minimizing post-release hotfixes.",
+      "Implementation the payment fulaillment process of the booking system, including reservation completion and PDF ticket generation using Next.js.",
+      "Intergrating dynamic data using GraphQL to optimise content delivery, collaborating in cross-functional team.",
+      "Guided junior developers through pair programming to improve code quality. Identiaied and resolved issues in modal data management early in the event booking alow, preventing data loss and reducing bugs.",
     ],
   },
   {
@@ -20,14 +19,43 @@ export const Expeirences_CV: Expeirences_CV_T[] = [
     endDate: "SEP 2023",
     where: "Seoul, South Korea",
     position: "Frontend Developer, R&D team",
-    companyDescription: "Software Development Company",
-    bullets: [
-      "Task Management & Efficiency: Led the frontend team in sprint planning and task prioritization using Jira, guiding two junior developers and identifying bottlenecks to ensure the team focused on the most critical issues. This leadership approach optimized workflows, enhanced project efficiency, and improved cross-department communication.",
-      "Problem Solving through Optimization: Identified and optimized a critical function that was causing significant delays, reducing its execution time from 2.03s to 0.027s (74x). This improvement is expected to reduce Interaction to Next Paint (INP) significantly, leading to smoother performance and a better user experience.",
-      "Mentoring & Onboarding: Led pair programming and owned the onboarding process for junior developers, designing a structured training plan, fostering continuous learning, and guiding complex problem-solving.",
-      "Worked across various industries, developing the ability to gather requirements and define key milestones for successful project delivery.",
-      "Prioritized tasks effectively based on urgency, consistently meeting deadlines while maintaining accountability and high- quality output.",
-      "Collaborated with cross-functional teams, enhancing problem-solving skills and adapting to diverse perspectives within the team.",
+    companyDescription:
+      "HNINE is a digital product studio based in Seoul, specializing in service planning, UX/UI design, and digital product development to deliver innovative user experiences through technology.",
+    projects: [
+      {
+        name: "VRTX",
+        period: "JAN 2023 - SEP 2023",
+        desc: "A content-based community for game users that aims to become the catalyst for the mass adoption of GameFi (Web3).",
+        detailTitle: [
+          "Phase 1: Initial Development & Launch",
+          "Phase 2: Service Optimization & Feature Enhancement",
+        ],
+        details: [
+          [
+            "Implemented Next.js and optimised rendering strategies (ISR, CSR) to improve SEO and page load speed.",
+            "Developed the main content feed with a alexible ranking system that allows administrators to control the order of different types of posts (user posts, ads, promotions, recommendations) while ensuring dynamic content updates.",
+            "Integrated Sentry for real-time error tracking and designed an error boundary system, ensuring application stability and preparing the project for efaicient issue detection and resolution in future development cycles.",
+            "Optimised frontend performance with virtualised components, reducing DOM elements for smoother scrolling and better efaiciency with large datasets.",
+          ],
+          [
+            "Led frontend development for both user-facing service and admin back-ofaice during service upgrade sprints, driving sprint planning and task prioritization. Mentored two junior developers and ensured smooth feature deployment.",
+            "Innovatively enhanced INP on calendar page by 98% by replacing external date library with a native JavaScript Date object, eliminating timezone calculation inefaiciencies.",
+            "Successfully integrated Web3 functionality with crypto wallet connectivity and loyalty features.",
+          ],
+        ],
+      },
+      {
+        name: "Location-based map editor, Back office",
+        period: "JUL 2022 - DEC 2022",
+        desc: "An Indoor positioning SVG based map editor aimed at enhancing location based marketing strategies.",
+        details: [
+          [
+            "Led full-cycle development of a canvas-based admin tool, working solo while collaborating directly with stakeholders to reaine UX and functionality.",
+            "Designed an event-driven architecture, separating business logic from canvas control using the Singleton pattern, enabling alexible updates and reducing maintenance complexity.",
+            "Pre-structured component and event control systems, accelerating delivery by 15%, reducing unexpected rework, and ensuring smoother collaboration with stakeholders.",
+          ],
+        ],
+      },
     ],
   },
 ];
@@ -47,5 +75,12 @@ interface Expeirences_CV_T {
   where: string;
   position: string;
   companyDescription?: string;
-  bullets: string[];
+  bullets?: string[];
+  projects?: Array<{
+    name: string;
+    period: string;
+    desc?: string;
+    details: Array<string[]>;
+    detailTitle?: string[];
+  }>;
 }

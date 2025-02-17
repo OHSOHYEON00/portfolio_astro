@@ -1,19 +1,25 @@
 ---
 import Layout from "layouts/Layout.astro";
 import { Expeirences_CV, Education_CV } from "utils";
+
+const sectionStyle = "md:flex gap-16",
+  sectionTitleStyle = "text-lg font-medium";
+
+const listStyle = "marker:text-green-600 list-disc pl-6",
+  bulletSmallStyle = "pl-1 text-sm pb-3";
 ---
 
 <Layout>
   <main
-    class="lg:p-42 md:p-32 p-8 md:pt-48 lg:pt-48 sm:pt-48 pt-48 flex flex-col gap-28"
+    class="lg:p-42 md:p-36 p-8 md:pt-48 lg:pt-48 sm:pt-48 pt-48 flex flex-col gap-28"
   >
     <h1 class="font-semibold text-4xl text-black">Sohyeon Oh</h1>
-    <section class="flex gap-16">
-      <h2 class="text-lg font-medium">EXPERIENCE</h2>
+    <section class={sectionStyle}>
+      <h2 class={sectionTitleStyle}>EXPERIENCE</h2>
       <div>
         {
           Expeirences_CV.map((exp, index) => (
-            <article class={`${index < Expeirences_CV.length - 1 && "mb-24"}`}>
+            <article class={`${index < Expeirences_CV.length - 1 && "mb-20"}`}>
               <div class={`tracking-tight flex items-center justify-between`}>
                 <div>
                   <p class="font-semibold text-lg inline">{exp.company}</p> ㅡㅡ
@@ -32,9 +38,41 @@ import { Expeirences_CV, Education_CV } from "utils";
                 {exp.companyDescription}
               </p>
 
-              <ul class="marker:text-green-600 list-disc pl-6">
-                {exp.bullets.map((bullet) => (
-                  <li class="pl-1 text-sm pb-3">{bullet}</li>
+              <ul class={listStyle}>
+                {exp.bullets &&
+                  exp.bullets.map((bullet) => (
+                    <li class={bulletSmallStyle}>{bullet}</li>
+                  ))}
+
+                {exp.projects?.map((proj) => (
+                  <li class="mb-8">
+                    <span class="text-md font-semibold">{proj.name}</span>{" "}
+                    <span class="text-sm">({proj.period})</span>
+                    <p class="tracking-tight text-sm text-gray-500 my-3">
+                      {proj.desc}
+                    </p>
+                    {proj.detailTitle ? (
+                      <>
+                        {proj.detailTitle.map((title, index) => (
+                          <div>
+                            <p class="mb-3">{title}</p>
+
+                            <ul class={listStyle}>
+                              {proj.details[index].map((detail) => (
+                                <li class={bulletSmallStyle}>{detail}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <ul class={listStyle}>
+                        {proj.details[0].map((detail) => (
+                          <li class={bulletSmallStyle}>{detail}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
                 ))}
               </ul>
             </article>
@@ -43,8 +81,8 @@ import { Expeirences_CV, Education_CV } from "utils";
       </div>
     </section>
 
-    <section class="flex gap-16">
-      <h2 class="md:text-lg text-md font-medium">EDUCATION</h2>
+    <section class={sectionStyle}>
+      <h2 class={sectionTitleStyle}>EDUCATION</h2>
       <article class="w-screen">
         <div class={` flex items-center justify-between`}>
           <h3 class="font-semibold text-xl inline">{Education_CV.title}</h3>
