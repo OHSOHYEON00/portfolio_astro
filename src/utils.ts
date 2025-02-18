@@ -14,11 +14,11 @@ export const Expeirences_CV: Expeirences_CV_T[] = [
     ],
   },
   {
-    company: "Hnine",
+    company: "HNINE",
     startDate: "MAR 2021",
     endDate: "SEP 2023",
     where: "Seoul, South Korea",
-    position: "Frontend Developer, R&D team",
+    position: "Frontend Engineer, R&D team",
     companyDescription:
       "HNINE is a digital product studio based in Seoul, specializing in service planning, UX/UI design, and digital product development to deliver innovative user experiences through technology.",
     projects: [
