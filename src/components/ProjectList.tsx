@@ -146,8 +146,8 @@ const ProjectCard = ({
     <article
       ref={projectRef}
       className={`${
-        index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-      } my-10 flex gap-16 border-t-[1px] group border-slate-200 pt-12 pb-6  `}
+        index % 2 === 0 ? "sm:flex-row " : "sm:flex-row-reverse "
+      } items-center flex-col-reverse my-10 flex gap-16 border-t-[1px] group border-slate-200 pt-12 pb-6  `}
     >
       <div className="opacity-50 group-hover:opacity-100 transition-opacity">
         <p
@@ -167,7 +167,7 @@ const ProjectCard = ({
             src={project.image}
             alt={`${project.name} present`}
             className={
-              "rounded-lg drop-shadow-xl shadow-2xl min-w-2x opacity-50 group-hover:opacity-100 max-w-2xs h-auto group-hover:scale-110 transition-all"
+              "rounded-lg drop-shadow-xl shadow-2xl w-80 sm:min-w-2x opacity-50 group-hover:opacity-100 sm:max-w-2xs h-auto group-hover:scale-110 transition-all"
             }
           />
         )}

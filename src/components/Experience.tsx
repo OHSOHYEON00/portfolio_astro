@@ -16,7 +16,7 @@ function ExperienceItem({
   logoStyle: string;
 }) {
   return (
-    <article className="grid grid-cols-[auto_0.8fr_0.5fr_0.5fr] border-l-[1px] border-slate-300 pl-10">
+    <article className="grid md:grid-cols-[auto_0.8fr_0.5fr_0.5fr] grid-cols-[1fr] border-l-[1px] border-slate-300 pl-10">
       <img
         src={logo}
         alt={"logo"}
@@ -29,7 +29,9 @@ function ExperienceItem({
       </div>
 
       <p className="text-sm text-slate-400">{location}</p>
-      <p className="text-sm text-slate-600 justify-self-end">{period}</p>
+      <p className="md:text-sm text-xs text-slate-600 justify-self-end">
+        {period}
+      </p>
     </article>
   );
 }
