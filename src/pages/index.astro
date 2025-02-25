@@ -2,6 +2,7 @@
 import Experience from "components/Experience";
 import Layout from "../layouts/Layout.astro";
 import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2";
+import ProjectList from "components/ProjectList";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,19 +12,23 @@ import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2";
   <main class="p-4">
     <section class="flex flex-col w-full h-screen justify-center items-center">
       <p class="max-w-56 text-center">
-        Hello, I'm <strong>Sohyeon Oh</strong>, a frontend engineer from Korea
+        Hello, I'm <strong>Sohyeon Oh</strong>, a frontend engineer from South
+        Korea
       </p>
-      <DownIcon className="text-2xl animate-bounce mt-10" />
+      <a href={"#experience"}>
+        <DownIcon className="text-2xl animate-bounce mt-10" />
+      </a>
     </section>
-    <section class="flex flex-col w-full justify-center items-center gap-28">
-      <h2 class="font-bold">Projects</h2>
-    </section>
+
     <section
-      class="flex flex-col w-full justify-center items-center gap-20 mt-56"
+      class="flex flex-col w-full justify-center items-center gap-20 mt-48 pt-28"
+      id="experience"
     >
-      <div class="flex w-full px-80 justify-between items-center">
-        <h2 class="font-bold text-lg">EXPERIENCE</h2>
-        <div class="text-right">
+      <div class="flex w-full px-[15vw] justify-between items-center">
+        <h2 class="font-bold text-xl">EXPERIENCE</h2>
+        <div
+          class="text-right animate-bounce hover:animate-none transition-all"
+        >
           <a
             href={"/cv"}
             target="_parent"
@@ -35,20 +40,30 @@ import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2";
         </div>
       </div>
 
-      <Experience />
-      <section
-        class="flex flex-col w-full justify-center items-center gap-28 mt-56"
-      >
-        <h2 class="font-bold">Posts</h2>
+      <section class="w-full px-[15vw] flex flex-col gap-7">
+        <Experience />
       </section>
+
       <section
-        class="flex flex-col w-full justify-center items-center gap-28 mt-56"
+        id="projects"
+        class="flex flex-col w-full justify-center items-center gap-20 mt-56 pt-28"
+      >
+        <div
+          class="flex flex-col w-full px-[15vw] justify-between items-center"
+        >
+          <h2 class="font-bold text-xl w-full">FEATURED PROJECTS</h2>
+          <ProjectList client:load />
+        </div>
+      </section>
+
+      <section
+        class="flex flex-col w-full justify-center items-center gap-28 mt-80"
       >
         <h2 class="font-bold">About me</h2>
         <div class="flex flex-col items-center gap-4 max-w-[500px]">
           <p class="text-center">
-            My name is <strong>Alejandro Londoño</strong>, I started programming
-            in mid-2021 and I currently specialize in web development.
+            My name is <strong>Sohyeon Oh</strong>, I started programming in
+            2021 and I currently specialize in web development.
           </p>
           <p class="text-center">
             I am passionate about technology, learning new things, sharing
@@ -61,7 +76,9 @@ import { HiOutlineArrowDownCircle as DownIcon } from "react-icons/hi2";
       <p
         class="text-center text-sm text-slate-700 dark:text-slate-400 p-4 mt-28"
       >
-        Made with &#x2665; by Alejandro Londoño | @slydragonn
+        This website was built with <b>Astro & TailwindCSS</b>.
+        <br />
+        Crafted by <b>Sohyeon Oh</b>.
       </p>
     </footer>
   </main>

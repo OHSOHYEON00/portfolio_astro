@@ -1,5 +1,4 @@
 import React from "react";
-import { Image } from "astro:assets";
 
 function ExperienceItem({
   logo,
@@ -37,7 +36,7 @@ function ExperienceItem({
 
 function Experience() {
   return (
-    <section className="w-full px-80 flex flex-col gap-7">
+    <>
       <ExperienceItem
         logo={"/public/images/cliqupLogo.png"}
         position={"Frontend Engineer"}
@@ -55,7 +54,7 @@ function Experience() {
         period={"MAR 2021 - SEP 2023"}
         logoStyle={"w-7 h-auto"}
       />
-    </section>
+    </>
   );
 }
 

@@ -2,20 +2,24 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ModeToggle } from "./ModeToggle";
 
 const socials = [
-  {
-    name: "Github",
-    url: "https://github.com/slydragonn",
-    icon: FaGithub,
-  },
+  // {
+  //   name: "Github",
+  //   url: "https://github.com/slydragonn",
+  //   icon: FaGithub,
+  // },
   // {
   //   name: "DEV",
   //   url: "https://dev.to/slydragonn",
   //   icon: FaDev,
   // },
-
+  // {
+  //   name: "Projects",
+  //   url: "https://www.linkedin.com/in/sohyeonoh/",
+  //   icon: FaLinkedin,
+  // },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/alejolg/",
+    url: "https://www.linkedin.com/in/sohyeonoh/",
     icon: FaLinkedin,
   },
 ];
@@ -32,7 +36,17 @@ const Navbar = () => {
           </li>
         ))}
         <li>
-          <a href={"/cv"} target="_parent" rel="noreferrer">
+          <a
+            href={"#projects"}
+            className="text-xs"
+            target="_parent"
+            rel="noreferrer"
+          >
+            <div>Projects</div>
+          </a>
+        </li>
+        <li>
+          <a href={"/cv"} className="text-xs" target="_parent" rel="noreferrer">
             <div>CV</div>
           </a>
         </li>
