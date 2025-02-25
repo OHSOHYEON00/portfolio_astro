@@ -3,7 +3,7 @@ import Layout from "layouts/Layout.astro";
 import { Expeirences_CV, Education_CV } from "utils";
 
 const sectionStyle = "md:flex gap-16",
-  sectionTitleStyle = "text-lg font-medium";
+  sectionTitleStyle = "text-lg font-medium mb-6";
 
 const listStyle = "marker:text-green-600 list-disc pl-6",
   bulletSmallStyle = "pl-1 text-sm pb-3";
@@ -20,12 +20,14 @@ const listStyle = "marker:text-green-600 list-disc pl-6",
         {
           Expeirences_CV.map((exp, index) => (
             <article class={`${index < Expeirences_CV.length - 1 && "mb-20"}`}>
-              <div class={`tracking-tight flex items-center justify-between`}>
+              <div
+                class={`tracking-tight flex flex-col sm:flex-row sm:items-center justify-between`}
+              >
                 <div>
                   <p class="font-semibold text-lg inline">{exp.company}</p> ㅡㅡ
                   <span class="text-sm font-light">{exp.position}</span>
                 </div>
-                <p class=" text-sm font-normal">
+                <p class="text-xs sm:text-sm font-normal">
                   {exp.startDate} - {exp.endDate}
                 </p>
               </div>
@@ -47,7 +49,7 @@ const listStyle = "marker:text-green-600 list-disc pl-6",
                 {exp.projects?.map((proj) => (
                   <li class="mb-8">
                     <span class="text-md font-semibold">{proj.name}</span>{" "}
-                    <span class="text-sm">({proj.period})</span>
+                    <span class="text-xs sm:text-sm">({proj.period})</span>
                     <p class="tracking-tight text-sm text-gray-500 my-3">
                       {proj.desc}
                     </p>
@@ -83,10 +85,14 @@ const listStyle = "marker:text-green-600 list-disc pl-6",
 
     <section class={sectionStyle}>
       <h2 class={sectionTitleStyle}>EDUCATION</h2>
-      <article class="w-screen">
-        <div class={` flex items-center justify-between`}>
-          <h3 class="font-semibold text-xl inline">{Education_CV.title}</h3>
-          <p class="text-sm font-normal">
+      <article class="">
+        <div
+          class={` flex sm:flex-row flex-col sm:items-center justify-between`}
+        >
+          <h3 class="font-semibold sm:text-xl text-base inline">
+            {Education_CV.title}
+          </h3>
+          <p class="sm:text-sm text-xs font-normal">
             {Education_CV.startDate} - {Education_CV.endDate}
           </p>
         </div>
